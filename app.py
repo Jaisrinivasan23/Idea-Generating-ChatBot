@@ -14,13 +14,16 @@ def home():
 def generate_idea():
     user_input = request.json.get('user_input')
     
-    response = openai.Completion.create(
-        engine="gpt-3.5-turbo",
-        prompt=f"Generate a creative idea for: {user_input}",
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are an AI that generates creative ideas."},
+            {"role": "user", "content": user_input}
+        ],
         max_tokens=150
     )
     
-    idea = response.choices[0].text.strip()
+    idea = response.choices[0].message['content'].strip()
     
     return jsonify({'idea': idea})
 
