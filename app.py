@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Replace 'your_replicate_api_token' with your actual Replicate API token
-REPLICATE_API_TOKEN = 'r8_L2vuqjV0iqiadWGLiAzOPD6v4ruKcnb3YlvBw'
+REPLICATE_API_TOKEN = 'r8_YzwhBsALLuYoQLe2mpIIyAmBqDKjm3d0uhCLs'
 os.environ['REPLICATE_API_TOKEN'] = REPLICATE_API_TOKEN
 
 # Default model configuration
